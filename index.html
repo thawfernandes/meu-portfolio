@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfólio</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+  </head>
+  <body>
+    <header>
+      <nav>
+        <ul>
+          <li><a href="#saiba-mais">Saiba Mais</a></li>
+          <li><a href="#projetos">Projetos</a></li>
+          <li><a href="#contatos">Contatos</a></li>
+        </ul>
+      </nav>
+      <h1>Portfólio</h1>
+    </header>
+    <section id="intro">
+      <img src="image/crachá.png" alt="Crachá com Foto" class="badge" />
+    </section>
+    <section id="saiba-mais">
+      <h2>Saiba Mais</h2>
+      <p>
+        Olá! Sou estudante de Engenharia de Software e apaixonada por
+        desenvolvimento front-end. Adoro criar interfaces bonitas e funcionais,
+        equilibrando design e usabilidade. Estou aprendendo HTML, CSS e
+        JavaScript, e explorando ferramentas como Figma e Git. Busco um estágio
+        para ganhar experiência e crescer no mundo da tecnologia. Vamos
+        conversar! 💜
+      </p>
+    </section>
+    <section id="projetos">
+      <h2>Projetos</h2>
+      <div class="project-container">
+        <img
+          src="image/Portfólio .png"
+          alt="Pasta 1"
+          onclick="toggleProject('project1')"
+        />
+        <img
+          src="image/Portfólio .png"
+          alt="Pasta 2"
+          onclick="toggleProject('project2')"
+        />
+        <img
+          src="image/Portfólio .png"
+          alt="Pasta 3"
+          onclick="toggleProject('project3')"
+        />
+        <img
+          src="image/Portfólio .png"
+          alt="Pasta 4"
+          onclick="toggleProject('project4')"
+        />
+      </div>
+      <div id="project1" class="project-content">
+        <a
+          href="https://github.com/thawfernandes/GeradorDeCores"
+          target="_blank"
+        >
+          <i class="fas fa-folder"></i> Gerador de Cores
+        </a>
+        <p>
+          Este projeto é um gerador de cores que permite gerar e visualizar
+          cores aleatórias, exibindo seus valores hexadecimais e RGB.
+        </p>
+      </div>
+      <div id="project2" class="project-content"></div>
+      <div id="project3" class="project-content"></div>
+      <div id="project4" class="project-content"></div>
+    </section>
+
+    <section id="contatos">
+      <div class="highlight">
+        A tecnologia nos aproxima. Vamos nos conectar!
+      </div>
+      <div class="social-icons">
+        <a href="mailto:thawanny2018@hotmail.com" target="_blank">
+          <img src="image/email.png" alt="Email" />
+        </a>
+        <a href="https://github.com/thawfernandes" target="_blank">
+          <img src="image/github.png" alt="GitHub" />
+        </a>
+        <a href="https://wa.me/62997000107" target="_blank">
+          <img src="image/whatssap.png" alt="WhatsApp" />
+        </a>
+        <a href="https://www.instagram.com/thaw_fernandezz" target="_blank">
+          <img src="image/insta.png" alt="Instagram" />
+        </a>
+        <a href="https://www.linkedin.com/in/thawannyc/" target="_blank">
+          <img src="image/linkedln.png" alt="LinkedIn" />
+        </a>
+      </div>
+    </section>
+    <script>
+      function toggleProject(projectId) {
+        const projects = document.querySelectorAll(".project-content");
+        const images = document.querySelectorAll(".project-container img");
+
+        // Resetar todas as imagens e esconder todo o conteúdo dos projetos
+        images.forEach((img) => img.classList.remove("active"));
+        projects.forEach((project) => project.classList.remove("active"));
+
+        // Ativar o projeto clicado e a imagem correspondente
+        document.getElementById(projectId).classList.add("active");
+        document
+          .querySelector(`[onclick="toggleProject('${projectId}')"]`)
+          .classList.add("active");
+      }
+    </script>
+  </body>
+</html>
